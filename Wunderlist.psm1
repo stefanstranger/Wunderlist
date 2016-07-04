@@ -55,7 +55,7 @@ Function Set-WunderlistAuthentication {
         $EncryptedAccessTokenString = $SecureAccessTokenString | ConvertFrom-SecureString -key $KeyBytes
 
 
-        $FolderName = 'Wunderlist2'
+        $FolderName = 'Wunderlist'
         $ClientIDConfigName = 'ClientID.key'
         $AccessTokenConfigName = 'AccessToken.key'
         $saltname   = 'salt.rnd'
@@ -268,11 +268,11 @@ function Read-WunderlistAuthentication {
     Begin
     {
         # Test if ClientID file exists.
-        if (!(Test-Path "$($env:AppData)\Wunderlist2\ClientID.key"))
+        if (!(Test-Path "$($env:AppData)\Wunderlist\ClientID.key"))
         {
             throw 'Configuration has not been set, Set-WunderlistAuthentication to configure the API Keys.'
         }
-        elseif (!(Test-Path "$($env:AppData)\Wunderlist2\AccessToken.key"))
+        elseif (!(Test-Path "$($env:AppData)\Wunderlist\AccessToken.key"))
         {
             throw 'Configuration has not been set, Set-WunderlistAuthentication to configure the API Keys.'
         }
