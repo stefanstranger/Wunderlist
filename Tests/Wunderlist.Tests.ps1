@@ -1,8 +1,20 @@
-﻿$ModulePath= split-path -parent(Split-Path -Parent $MyInvocation.MyCommand.Path)
+﻿#Variables for Pester tests
+
+$ModulePath= split-path -parent(Split-Path -Parent $MyInvocation.MyCommand.Path)
 $ModuleName = 'Wunderlist'
 $ManifestPath   = "$ModulePath\$ModuleName.psd1"
 if (Get-Module -Name $ModuleName) { Remove-Module $ModuleName -Force }
 Import-Module $ManifestPath -Verbose:$false
+
+$Global:ModuleVersionPath = "$($pwd.ProviderPath)\Tests\version.txt"
+
+#Check for version file in Tests folder
+Write-Verbose "Checking for Version.txt file"
+if (!(Test-path $ModuleVersionPath))
+{
+    Set-Content -Path $ModuleVersionPath -Value "1.0.0"
+}
+
 
 # test the module manifest - exports the right functions, processes the right formats, and is generally correct
 Describe "Manifest" {
@@ -48,6 +60,13 @@ Describe "Manifest" {
         {
             $Tag -notmatch '\s' | Should Be $true
         }
+    }
+
+    It 'Module version should be higher then last published version' {
+        $LatestModuleVersion = get-content $ModuleVersionPath
+        $Global:NewModuleVersion = $ManifestHash.ModuleVersion
+        $ManifestHash.ModuleVersion | Should BeGreaterThan $LatestModuleVersion 
+        
     }
 }
 
