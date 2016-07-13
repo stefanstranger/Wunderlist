@@ -24,4 +24,10 @@ task Test {
 
 task Deploy -depends Analyze, Test {
     Invoke-PSDeploy -Path ".\Wunderlist.psdeploy.ps1" -Force -Verbose:$VerbosePreference
+
+    #Update version.txt file
+    Set-Content -Path $ModuleVersionPath -Value $NewModuleVersion -Force
+
 }
+
+
