@@ -30,7 +30,7 @@ CompanyName = 'Unknown'
 Copyright = '(c) 2016 "Stefan Stranger". All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'PowerShell Module for Wunderlist'
 
 # Minimum version of the Windows PowerShell engine required by this module
 # PowerShellVersion = ''
@@ -95,13 +95,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('Wunderlist','API','REST')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'http://opensource.org/licenses/MIT'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/stefanstranger/Wunderlist'
 
         # A URL to an icon representing this module.
         # IconUri = ''
