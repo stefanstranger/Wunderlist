@@ -1,13 +1,56 @@
-﻿$ModuleManifestName = 'Wunderlist.psd1'
-# 32061ca2-cb32-469c-991a-d1cab644e576 - testing use of PLASTER predefined variables.
-Import-Module $PSScriptRoot\..\$ModuleManifestName
+﻿$ModulePath= split-path -parent(Split-Path -Parent $MyInvocation.MyCommand.Path)
+$ModuleName = 'Wunderlist'
+$ManifestPath   = "$ModulePath\$ModuleName.psd1"
+if (Get-Module -Name $ModuleName) { Remove-Module $ModuleName -Force }
+Import-Module $ManifestPath -Verbose:$false
 
-Describe 'Module Manifest Tests' {
-    It 'Passes Test-ModuleManifest' {
-        Test-ModuleManifest -Path $PSScriptRoot\..\$ModuleManifestName
-        $? | Should Be $true
+# test the module manifest - exports the right functions, processes the right formats, and is generally correct
+Describe "Manifest" {
+    
+    $ManifestHash = Invoke-Expression (Get-Content $ManifestPath -Raw)
+
+    It "has a valid manifest" {
+        {
+            $null = Test-ModuleManifest -Path $ManifestPath -ErrorAction Stop -WarningAction SilentlyContinue
+        } | Should Not Throw
+    }
+
+    It "has a valid root module" {
+        $ManifestHash.RootModule | Should Be "$ModuleName.psm1"
+    }
+
+    It "has a valid Description" {
+        $ManifestHash.Description | Should Not BeNullOrEmpty
+    }
+
+    It "has a valid guid" {
+        $ManifestHash.Guid | Should Be '8418f0c1-db0c-4605-85b6-4ed52b460160'
+    }
+
+    It "has a valid version" {
+        $ManifestHash.ModuleVersion -as [Version] | Should Not BeNullOrEmpty
+    }
+
+    It "has a valid copyright" {
+        $ManifestHash.CopyRight | Should Not BeNullOrEmpty
+    }
+
+    It 'has a valid license Uri' {
+        $ManifestHash.PrivateData.Values.LicenseUri | Should Be 'http://opensource.org/licenses/MIT'
+    }
+    
+    It 'has a valid project Uri' {
+        $ManifestHash.PrivateData.Values.ProjectUri | Should Be 'https://github.com/stefanstranger/Wunderlist'
+    }
+    
+    It "gallery tags don't contain spaces" {
+        foreach ($Tag in $ManifestHash.PrivateData.Values.tags)
+        {
+            $Tag -notmatch '\s' | Should Be $true
+        }
     }
 }
+
 
 Describe 'Module Wunderlist works' {
     It 'Passed Module load' {
