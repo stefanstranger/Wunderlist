@@ -1,6 +1,6 @@
 ﻿Deploy 'Deploy Wunderlist Module script' {
     By Filesystem {
-        FromSource 'C:\users\Stefan\Documents\GitHub\Wunderlist2'
+        FromSource 'C:\users\Stefan\Documents\GitHub\Wunderlist'
         To "$($env:PSModulePath.split(';')[0])\Wunderlist"
         Tagged Prod, Module
         WithOptions @{
