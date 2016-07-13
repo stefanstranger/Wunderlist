@@ -279,15 +279,15 @@ function Read-WunderlistAuthentication {
     }
     Process
     {
-        Write-Verbose -Message "Reading ClientID key from $($env:AppData)\Wunderlist2\ClientID.key."
-        $ClientIDConfigFileContent = Get-Content -Path "$($env:AppData)\Wunderlist2\ClientID.key"
+        Write-Verbose -Message "Reading ClientID key from $($env:AppData)\Wunderlist\ClientID.key."
+        $ClientIDConfigFileContent = Get-Content -Path "$($env:AppData)\Wunderlist\ClientID.key"
         Write-Debug -Message "ClientID Secure string is $($ClientIDConfigFileContent)"
         
-        Write-Verbose -Message "Reading AccessToken key from $($env:AppData)\Wunderlist2\AccessToken.key."
-        $AccessTokenConfigFileContent = Get-Content -Path "$($env:AppData)\Wunderlist2\AccessToken.key"
+        Write-Verbose -Message "Reading AccessToken key from $($env:AppData)\Wunderlist\AccessToken.key."
+        $AccessTokenConfigFileContent = Get-Content -Path "$($env:AppData)\Wunderlist\AccessToken.key"
         Write-Debug -Message "AccessToken Secure string is $($AccessTokenConfigFileContent)"
 
-        $SaltBytes = Get-Content -Encoding Byte -Path "$($env:AppData)\Wunderlist2\salt.rnd" 
+        $SaltBytes = Get-Content -Encoding Byte -Path "$($env:AppData)\Wunderlist\salt.rnd" 
         $Credentials = New-Object System.Management.Automation.PSCredential -ArgumentList 'user', $MasterPassword
 
         # Derive Key, IV and Salt from Key
