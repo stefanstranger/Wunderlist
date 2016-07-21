@@ -2,3 +2,4 @@ MasterPassword.txt
 version.txt
 *.old
 appveyor.yml
+Get-PSDriveRoot.ps1
