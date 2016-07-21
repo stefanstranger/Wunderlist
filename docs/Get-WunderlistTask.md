@@ -1,35 +1,55 @@
 ---
 external help file: Wunderlist-help.xml
-online version: https://developer.wunderlist.com/documentation/endpoints/reminderlist
 schema: 2.0.0
+online version: https://developer.wunderlist.com/documentation/endpoints/task
 ---
 
 # Get-WunderlistTask
 ## SYNOPSIS
-{{Fill in the Synopsis}}
-
+This Function retrieves Wunderlist Tasks.
 ## SYNTAX
 
 ```
-Get-WunderlistTask [[-Id] <String>] [-Completed] [[-Title] <String>]
+Get-WunderlistTask [[-Id] <String>] [-Completed] [[-Title] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
-
+This Function retrieves Wunderlist Tasks within the available Wunderlist Lists.
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-WunderlistTask
 ```
 
-{{ Add example description here }}
+Get all Wunderlist Tasks for all Lists.
+
+### Example 2
+```
+PS C:\> Get-WunderlistTask -id 164936522
+```
+
+Get all Wunderlist Tasks from a specific Wunderlist List (id).
+
+### Example 3
+```
+PS C:\>  Get-WunderlistTask -Title "*email
+```
+
+Get-WunderlistTask where Title property contains "email".
+
+### Example 4
+```
+PS C:\>  Get-WunderlistTask -Title "*email*" -completed
+```
+
+Get-WunderlistTask where Title property contains "email" and is completed.
+
 
 ## PARAMETERS
 
 ### -Completed
-{{Fill Completed Description}}
+Get all Wunderlist Tasks for all Lists which are completed.
 
 ```yaml
 Type: SwitchParameter
@@ -44,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-{{Fill Id Description}}
+Wunderlist List Id
 
 ```yaml
 Type: String
@@ -59,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{Fill Title Description}}
+Wunderlist Task Title
 
 ```yaml
 Type: String
@@ -73,17 +93,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
 
 ### System.String
-
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSCustomObject
 
-
 ## NOTES
 
 ## RELATED LINKS
-
