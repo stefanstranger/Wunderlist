@@ -6,7 +6,7 @@ $ManifestPath   = "$ModulePath\$ModuleName.psd1"
 if (Get-Module -Name $ModuleName) { Remove-Module $ModuleName -Force }
 Import-Module $ManifestPath -Verbose:$false
 
-$Global:ModuleVersionPath = "$($pwd.ProviderPath)\Tests\version.txt"
+$Global:ModuleVersionPath = "$($PSScriptRoot)\version.txt"
 
 #Check for version file in Tests folder
 Write-Verbose "Checking for Version.txt file"
