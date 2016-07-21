@@ -122,14 +122,6 @@ Describe 'Test Functions in Wunderlist Module' {
 
         }
 
-        It 'Passes Read-WunderlistAuthentication Function' {
-            #Set MasterPassword. Remove MasterPassword.txt file before publication to PSGallery
-            $MasterPassword = Get-Content -Path "$PSScriptRoot\MasterPassword.txt" | ConvertTo-SecureString -AsPlainText -Force
-            Read-WunderlistAuthentication -MasterPassword $MasterPassword
-            $Global:ClientId | Should Not Be $null
-            $Global:AccessToken | Should Not Be $null
-
-        }
 
         <#
         It 'Passes Set-WunderlistAuthentication Function ' {
