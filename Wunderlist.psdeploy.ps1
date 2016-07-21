@@ -52,6 +52,8 @@ if(
             To AppVeyor
             WithOptions @{
                 Version = $env:APPVEYOR_BUILD_VERSION
+                ClientID = $env:ClientID
+                AccessToken = $env:AccessToken
             }
         }
     }
