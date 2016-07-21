@@ -320,14 +320,25 @@ function Read-WunderlistAuthentication {
 }
 
 function Build-AccessHeader {
+    [CmdletBinding()]
+    param()
     Write-Verbose 'Build-AccessHeader being called'
     #Check if ClientID and\or AccessToken are not available in session
+    
+    Write-Verbose "Checking for ClientID $env:ClientID and AccessToken $env:AccessToken variables"
+
     #For AppVeyor Tests also check environment variables
-    if (!($global:ClientID -and $Global:AccessToken) -or ($env:ClientID -and $env:AccessToken)) {
+    Write-Verbose "AppVeyor" 
+    if (($env:ClientID -and $env:AccessToken)) {
+        $Global:AccessToken = $env:AccessToken
+        $Global:ClientID = $env:ClientID
+    }
+    elseif (!($global:ClientID -and $Global:AccessToken)) {
         #Call Read-WunderlistAuthentication Function
         Write-Verbose 'Calling Read-WunderlistAuthentication function'
         Read-WunderlistAuthentication
     }
+        
 
     @{ 
         'X-Access-Token' = $Global:AccessToken
