@@ -322,7 +322,8 @@ function Read-WunderlistAuthentication {
 function Build-AccessHeader {
     Write-Verbose 'Build-AccessHeader being called'
     #Check if ClientID and\or AccessToken are not available in session
-    if (!($global:ClientID -and $Global:AccessToken)) {
+    #For AppVeyor Tests also check environment variables
+    if (!($global:ClientID -and $Global:AccessToken) -or ($env:ClientID -and $env:AccessToken)) {
         #Call Read-WunderlistAuthentication Function
         Write-Verbose 'Calling Read-WunderlistAuthentication function'
         Read-WunderlistAuthentication
