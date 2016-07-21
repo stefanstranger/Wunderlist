@@ -1,3 +1,4 @@
 MasterPassword.txt
 version.txt
 *.old
+appveyor.yml
