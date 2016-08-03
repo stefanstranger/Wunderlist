@@ -1,5 +1,4 @@
-﻿#requires -Modules BuildHelpers, PackageManagement, PowerShellGet, psake
-#requires -Version 3
+﻿#requires -Version 3
 #requires -runasadministrator
 
 #Check if not in psdrive folder. Can cause issues with Pester Output tests.
@@ -49,7 +48,7 @@ function Resolve-Module
                     
           Write-Verbose -Message "$($ModuleName) Installed Version [$($Version.tostring())] is outdated. Installing Gallery Version [$($GalleryVersion.tostring())]"
                     
-          Install-Module -Name $ModuleName -Force
+          Install-Module -Name $ModuleName -Force -SkipPublisherCheck #skip
           Import-Module -Name $ModuleName -Force -RequiredVersion $GalleryVersion
         }
         else
@@ -78,4 +77,4 @@ Set-BuildEnvironment
 Invoke-psake .\psakeBuild.ps1
 exit ( [int]( -not $psake.build_success ) )
 
-Invoke-psake -buildFile "$PSScriptRoot\psakeBuild.ps1" -taskList $Task -Verbose:$VerbosePreference
+#Invoke-psake -buildFile "$PSScriptRoot\psakeBuild.ps1" -taskList $Task -Verbose:$VerbosePreference
