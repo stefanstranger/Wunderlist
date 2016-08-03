@@ -1,0 +1,24 @@
+﻿# See http://www.appveyor.com/docs/appveyor-yml for many more options
+
+#Publish to PowerShell Gallery with this key
+environment:
+  NuGetApiKey:
+    secure: tmN1v+GmrsavOZMdyLOEsmopi/E5NE68VvbZRsKcTxVpGAlW6EE2gPm/ggSFVxG7
+  ClientID:
+    secure: YSgrLHMrp3umpbWW6lttaAsWVCkM0cya2yQnlqLZGB4=
+  AccessToken:
+    secure: ynxGjhmVdwMXW7i1ZZhaPxnQzDEk1rFslNom7vjuLxtvSeAKUmp8kAk5ay9DRkXWLCcFJQnNXNyJ64/QSzYg7Q==
+
+# Allow WMF5 (i.e. PowerShellGallery functionality)
+os: WMF 5
+
+# Skip on updates to the readme.
+# We can force this by adding [skip ci] or [ci skip] anywhere in commit message 
+skip_commits:
+  message: /updated readme.*|update readme.*s/
+
+build: false
+
+#Kick off the CI/CD pipeline
+test_script:
+  - ps: . .\build.ps1

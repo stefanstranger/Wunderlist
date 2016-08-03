@@ -1,2 +1,5 @@
 MasterPassword.txt
 version.txt
+*.old
+Get-PSDriveRoot.ps1
+Test*.xml

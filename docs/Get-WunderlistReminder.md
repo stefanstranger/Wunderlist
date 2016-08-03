@@ -1,53 +1,56 @@
 ---
 external help file: Wunderlist-help.xml
-online version: https://developer.wunderlist.com/documentation/endpoints/reminderlist
 schema: 2.0.0
+online version: https://developer.wunderlist.com/documentation/endpoints/reminderlist
 ---
 
-# Get-WunderlistReminder
+# Get-WunderlistData
 ## SYNOPSIS
-This Function retrieves Reminders for a Task or List.
-
+{{Fill in the Synopsis}}
 ## SYNTAX
 
 ```
-Get-WunderlistReminder
+Get-WunderlistData [[-RequestUrl] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This Function retrieves Reminders for a Task or List.
-
+{{Fill in the Description}}
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
-$DebugPreference = 'continue'; #Enable debug messages to be sent to console
+PS C:\> {{ Add example code here }}
 ```
 
-$AuthUrl = 'https://www.wunderlist.com/oauth/authorize'; # The base authorization URL from the service provider
-$ClientId = 'xxxxxxxxxxxxxxxxxxxx'; # Your registered application's client ID
-$RedirectUri = 'http://www.stranger.nl'; # The callback URL configured on your application
-
-#Call Get-oAuth2AccessToken
-Get-oAuth2AccessToken \`
- -AuthUrl $AuthUrl \`
- -ClientId $ClientId \`
- -RedirectUri $RedirectUri
-
-Get-WunderlistReminder -AccessToken '619c400c87156477cce37b4369f1adf8b278437a027bdd83962ba44abeb5' \`
-     -ClientId '123456789'
-
+{{ Add example description here }}
 ## PARAMETERS
 
+### -RequestUrl
+{{Fill RequestUrl Description}}
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 0
+Default value: 
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
+
+### None
 
 ## OUTPUTS
 
-### System.Management.Automation.PSCustomObject
+### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
-
-[https://developer.wunderlist.com/documentation/endpoints/reminderlist](https://developer.wunderlist.com/documentation/endpoints/reminderlist)
 

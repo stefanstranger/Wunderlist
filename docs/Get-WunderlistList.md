@@ -1,53 +1,41 @@
 ---
 external help file: Wunderlist-help.xml
-online version: https://developer.wunderlist.com/documentation/endpoints/list
 schema: 2.0.0
+online version: https://developer.wunderlist.com/documentation/endpoints/list
 ---
 
 # Get-WunderlistList
 ## SYNOPSIS
-This Function retrieves all Lists a user has permission to.
-
+This Function retrieves all Wunderlist Lists a user has permission to.
 ## SYNTAX
 
 ```
-Get-WunderlistList
+Get-WunderlistList [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This Function retrieves all Lists a user has permission to.
-
+This Function retrieves all Wunderlist Lists a user has permission to.
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### Example 1
 ```
-$DebugPreference = 'continue'; #Enable debug messages to be sent to console
+PS C:\> Get-WunderlistList
 ```
 
-$AuthUrl = 'https://www.wunderlist.com/oauth/authorize'; # The base authorization URL from the service provider
-$ClientId = 'xxxxxxxxxxxxxxxxxxxx'; # Your registered application's client ID
-$RedirectUri = 'http://www.stranger.nl'; # The callback URL configured on your application
-
-#Call Get-oAuth2AccessToken
-Get-oAuth2AccessToken \`
- -AuthUrl $AuthUrl \`
- -ClientId $ClientId \`
- -RedirectUri $RedirectUri
-
-Get-WunderlistList -AccessToken '619c400c87156477cce37b4369f1adf8b278437a027bdd83962ba44abeb5' \`
-     -ClientId '123456789'
-
+Retrieves all Wunderlist Lists where user has permission to.
 ## PARAMETERS
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
+
+### None
 
 ## OUTPUTS
 
-### System.Management.Automation.PSCustomObject
+### System.Object
 
 ## NOTES
 
 ## RELATED LINKS
-
-[https://developer.wunderlist.com/documentation/endpoints/list](https://developer.wunderlist.com/documentation/endpoints/list)
 

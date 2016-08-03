@@ -178,10 +178,49 @@
 </dev:remarks>
 </command:example>
 </command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-WunderlistList</command:name>
+<command:verb>Get</command:verb>
+<command:noun>WunderlistList</command:noun>
+<maml:description><maml:para>This Function retrieves all Wunderlist Lists a user has permission to.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This Function retrieves all Wunderlist Lists a user has permission to.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-WunderlistList</maml:name>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters></command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistList</dev:code>
+<dev:remarks><maml:para>Retrieves all Wunderlist Lists where user has permission to.
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
 <maml:uri>https://developer.wunderlist.com/documentation/endpoints/list</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
@@ -246,75 +285,6 @@
 </command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
 <maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/list</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-WunderlistData</command:name>
-<command:verb>Get</command:verb>
-<command:noun>WunderlistData</command:noun>
-<maml:description><maml:para>{{Fill in the Synopsis}}
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>{{Fill in the Description}}
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-WunderlistData</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>RequestUrl</maml:name>
-<maml:Description><maml:para>{{Fill RequestUrl Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>RequestUrl</maml:name>
-<maml:Description><maml:para>{{Fill RequestUrl Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
-<dev:remarks><maml:para>{{ Add example description here }}
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
-</maml:navigationLink>
-<maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/list</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -322,16 +292,16 @@
 <command:details><command:name>Get-WunderlistTask</command:name>
 <command:verb>Get</command:verb>
 <command:noun>WunderlistTask</command:noun>
-<maml:description><maml:para>{{Fill in the Synopsis}}
+<maml:description><maml:para>This Function retrieves Wunderlist Tasks.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>{{Fill in the Description}}
+<maml:description><maml:para>This Function retrieves Wunderlist Tasks within the available Wunderlist Lists.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Get-WunderlistTask</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
-<maml:Description><maml:para>{{Fill Id Description}}
+<maml:Description><maml:para>Wunderlist List Id
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -340,7 +310,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>{{Fill Title Description}}
+<maml:Description><maml:para>Wunderlist Task Title
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -349,7 +319,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
-<maml:Description><maml:para>{{Fill Completed Description}}
+<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
 </maml:para>
 </maml:Description>
 <dev:type><maml:name>SwitchParameter</maml:name>
@@ -359,7 +329,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
-<maml:Description><maml:para>{{Fill Completed Description}}
+<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
@@ -368,7 +338,7 @@
 <dev:defaultValue>False</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
-<maml:Description><maml:para>{{Fill Id Description}}
+<maml:Description><maml:para>Wunderlist List Id
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -377,7 +347,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>{{Fill Title Description}}
+<maml:Description><maml:para>Wunderlist Task Title
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -405,14 +375,32 @@
 </maml:alert>
 </maml:alertSet>
 <command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
-<dev:remarks><maml:para>{{ Add example description here }}
+<dev:code>PS C:\&gt; Get-WunderlistTask</dev:code>
+<dev:remarks><maml:para>Get all Wunderlist Tasks for all Lists.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistTask -id 164936522</dev:code>
+<dev:remarks><maml:para>Get all Wunderlist Tasks from a specific Wunderlist List (id).
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 3</maml:title>
+<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email</dev:code>
+<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email".
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 4</maml:title>
+<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email*" -completed</dev:code>
+<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email" and is completed.
 </maml:para>
 </dev:remarks>
 </command:example>
 </command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
+<maml:uri>https://developer.wunderlist.com/documentation/endpoints/task</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -420,11 +408,11 @@
 <command:details><command:name>Get-WunderlistUser</command:name>
 <command:verb>Get</command:verb>
 <command:noun>WunderlistUser</command:noun>
-<maml:description><maml:para>This Function retrieves all info related to the currently signed in user.
+<maml:description><maml:para>Retrieves all info related to the currently signed in Wunderlist user.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>This Function retrieves all info related to the currently signed in user.
+<maml:description><maml:para>Retrieves all info related to the currently signed in Wunderlist user.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Get-WunderlistUser</maml:name>
@@ -450,14 +438,14 @@
 </maml:alert>
 </maml:alertSet>
 <command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; Get-Wunderlist</dev:code>
-<dev:remarks><maml:para>
+<dev:code>PS C:\&gt; Get-WunderlistUser</dev:code>
+<dev:remarks><maml:para>Shows all information related to currently signed in Wunderlist user.
 </maml:para>
 </dev:remarks>
 </command:example>
 </command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
+<maml:uri>https://developer.wunderlist.com/documentation/endpoints/user</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -465,34 +453,16 @@
 <command:details><command:name>New-WunderlistTask</command:name>
 <command:verb>New</command:verb>
 <command:noun>WunderlistTask</command:noun>
-<maml:description><maml:para>{{Fill in the Synopsis}}
+<maml:description><maml:para>This Function Creates  new Wunderlist Task for a specified List.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>{{Fill in the Description}}
+<maml:description><maml:para>This Function Creates  new Wunderlist Task for a specified List.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>New-WunderlistTask</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>AccessToken</maml:name>
-<maml:Description><maml:para>{{Fill AccessToken Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>ClientId</maml:name>
-<maml:Description><maml:para>{{Fill ClientId Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>assignee_id</maml:name>
-<maml:Description><maml:para>{{Fill assignee_id Description}}
+<maml:Description><maml:para>Id for assignee of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -501,7 +471,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>completed</maml:name>
-<maml:Description><maml:para>{{Fill completed Description}}
+<maml:Description><maml:para>Completed status of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
@@ -510,7 +480,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>due_date</maml:name>
-<maml:Description><maml:para>{{Fill due_date Description}}
+<maml:Description><maml:para>Date when Wunderlist Task is due
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -519,7 +489,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>listid</maml:name>
-<maml:Description><maml:para>{{Fill listid Description}}
+<maml:Description><maml:para>Id for the Wunderlist List where to create the Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -528,7 +498,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_count</maml:name>
-<maml:Description><maml:para>{{Fill recurrence_count Description}}
+<maml:Description><maml:para>Integer on how often the recurrence type is recurrent
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -537,7 +507,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_type</maml:name>
-<maml:Description><maml:para>{{Fill recurrence_type Description}}
+<maml:Description><maml:para>Valid options: "day", "week", "month", "year", must be accompanied by recurrence_count
 </maml:para>
 </maml:Description>
 <command:parameterValueGroup><command:parameterValue required="false" variableLength="false">day</command:parameterValue>
@@ -551,7 +521,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>starred</maml:name>
-<maml:Description><maml:para>{{Fill starred Description}}
+<maml:Description><maml:para>Star for created Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
@@ -560,7 +530,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>title</maml:name>
-<maml:Description><maml:para>{{Fill title Description}}
+<maml:Description><maml:para>Title of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -570,26 +540,8 @@
 </command:parameter>
 </command:syntaxItem>
 </command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>AccessToken</maml:name>
-<maml:Description><maml:para>{{Fill AccessToken Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>ClientId</maml:name>
-<maml:Description><maml:para>{{Fill ClientId Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>assignee_id</maml:name>
-<maml:Description><maml:para>{{Fill assignee_id Description}}
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>assignee_id</maml:name>
+<maml:Description><maml:para>Id for assignee of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -598,7 +550,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>completed</maml:name>
-<maml:Description><maml:para>{{Fill completed Description}}
+<maml:Description><maml:para>Completed status of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
@@ -607,7 +559,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>due_date</maml:name>
-<maml:Description><maml:para>{{Fill due_date Description}}
+<maml:Description><maml:para>Date when Wunderlist Task is due
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -616,7 +568,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>listid</maml:name>
-<maml:Description><maml:para>{{Fill listid Description}}
+<maml:Description><maml:para>Id for the Wunderlist List where to create the Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -625,7 +577,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_count</maml:name>
-<maml:Description><maml:para>{{Fill recurrence_count Description}}
+<maml:Description><maml:para>Integer on how often the recurrence type is recurrent
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
@@ -634,7 +586,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_type</maml:name>
-<maml:Description><maml:para>{{Fill recurrence_type Description}}
+<maml:Description><maml:para>Valid options: "day", "week", "month", "year", must be accompanied by recurrence_count
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -643,7 +595,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>starred</maml:name>
-<maml:Description><maml:para>{{Fill starred Description}}
+<maml:Description><maml:para>Star for created Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
@@ -652,7 +604,7 @@
 <dev:defaultValue></dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>title</maml:name>
-<maml:Description><maml:para>{{Fill title Description}}
+<maml:Description><maml:para>Title of Wunderlist Task
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -680,14 +632,31 @@
 </maml:alert>
 </maml:alertSet>
 <command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
-<dev:remarks><maml:para>{{ Add example description here }}
+<dev:code>PS C:\&gt; New-WunderlistTask -listid '122588396' -title 'Testing Wunderlist from PowerShell'</dev:code>
+<dev:remarks><maml:para>Created new Wunderlist Task for listid '122588396' with the following title 'Testing Wunderlist from PowerShell'
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; $params = @{
+               'listid'  = '122588396';
+               'title'  = 'Testing posh module';
+               'assignee_id'= '10404478';
+               'completed' = $true;
+               'recurrence_type'= 'day';
+               'recurrence_count'= '2';
+               'due_date'= '2016-07-30';
+               'starred'= $false;
+              }
+
+ New-WunderlistTask @params</dev:code>
+<dev:remarks><maml:para>Created new Wunderlist Task for listid '122588396' with the following title 'Testing posh module' assigned to user with id '10404478' where task is completed and is repeated every two days and is due on date '2016-07-30'
 </maml:para>
 </dev:remarks>
 </command:example>
 </command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
+<maml:uri>https://developer.wunderlist.com/documentation/endpoints/task</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -753,6 +722,112 @@
 <maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Remove-WunderlistTask</command:name>
+<command:verb>Remove</command:verb>
+<command:noun>WunderlistTask</command:noun>
+<maml:description><maml:para>This Function removes a Wunderlist Task for a specified List.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This Function removes a Wunderlist Task for a specified List.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Remove-WunderlistTask</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="TaskId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>{{Fill Id Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
+<maml:Description><maml:para>{{Fill Confirm Description}}
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
+<maml:Description><maml:para>{{Fill WhatIf Description}}
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
+<maml:Description><maml:para>{{Fill Confirm Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="TaskId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>{{Fill Id Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
+<maml:Description><maml:para>{{Fill WhatIf Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>System.String</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSCustomObject</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; Remove-WunderlistTask -id 123456</dev:code>
+<dev:remarks><maml:para>Remove Wunderlist Task with id 123456
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; Remove-WunderlistTask -id 123456 -whatif</dev:code>
+<dev:remarks><maml:para>Remove Wunderlist Task with id 123456 and revision number 1 with whatif switch
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 3</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistList | Get-WunderlistTask | Where-Object {$_.completed -eq $true} | Remove-WunderlistTask -Confirm</dev:code>
+<dev:remarks><maml:para>Confirm the deletion of each Wunderlist Task which is completed
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <command:details><command:name>Set-WunderlistAuthentication</command:name>
