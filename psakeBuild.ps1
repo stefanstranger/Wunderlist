@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿# PSake makes variables declared here available in other scriptblocks
 # Init some things
 Properties {
@@ -18,6 +19,13 @@ Properties {
     {
         $Verbose = @{Verbose = $True}
     }
+=======
+﻿#psake is a build automation tool written in PowerShell
+
+properties {
+    $script = "$PSScriptRoot\Wunderlist.psm1"
+    $pesterscriptroot  = "$PSScriptRoot\.\Tests"
+>>>>>>> Stashed changes
 }
 
 Task Default -Depends Deploy
@@ -62,6 +70,14 @@ Task Test -Depends Init  {
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
     }
+<<<<<<< Updated upstream
+=======
+    else
+    {
+        write-Host 'No Test errors found by Pester' -ForegroundColor Green
+    }
+}
+>>>>>>> Stashed changes
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
 

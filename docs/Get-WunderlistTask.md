@@ -23,12 +23,17 @@ PS C:\> Get-WunderlistTask
 ```
 
 Get all Wunderlist Tasks for all Lists.
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ### Example 2
 ```
 PS C:\> Get-WunderlistTask -id 164936522
 ```
 
 Get all Wunderlist Tasks from a specific Wunderlist List (id).
+<<<<<<< Updated upstream
 ### Example 3
 ```
 PS C:\>  Get-WunderlistTask -Title "*email
@@ -39,6 +44,23 @@ Get-WunderlistTask where Title property contains "email".
 ```
 PS C:\>  Get-WunderlistTask -Title "*email*" -completed
 ```
+=======
+
+### Example 3
+```
+PS C:\>  Get-WunderlistTask -Title "*email
+```
+
+Get-WunderlistTask where Title property contains "email".
+
+### Example 4
+```
+PS C:\>  Get-WunderlistTask -Title "*email*" -completed
+```
+
+Get-WunderlistTask where Title property contains "email" and is completed.
+
+>>>>>>> Stashed changes
 
 Get-WunderlistTask where Title property contains "email" and is completed.
 ## PARAMETERS
@@ -101,4 +123,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

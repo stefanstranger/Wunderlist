@@ -25,6 +25,10 @@ PS C:\> New-WunderlistTask -listid '122588396' -title 'Testing Wunderlist from P
 ```
 
 Created new Wunderlist Task for listid '122588396' with the following title 'Testing Wunderlist from PowerShell'
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ### Example 2
 ```
 PS C:\> $params = @{

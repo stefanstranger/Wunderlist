@@ -8,6 +8,7 @@ if ($pwd -cmatch '[A-Z]:') {
     exit
 } 
 
+<<<<<<< Updated upstream
 
 function Resolve-Module
 {
@@ -65,3 +66,6 @@ Set-BuildEnvironment
 
 Invoke-psake .\psakeBuild.ps1
 exit ( [int]( -not $psake.build_success ) )
+=======
+Invoke-psake -buildFile "$PSScriptRoot\psakeBuild.ps1" -taskList $Task -Verbose:$VerbosePreference
+>>>>>>> Stashed changes
