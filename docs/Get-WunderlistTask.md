@@ -23,29 +23,24 @@ PS C:\> Get-WunderlistTask
 ```
 
 Get all Wunderlist Tasks for all Lists.
-
 ### Example 2
 ```
 PS C:\> Get-WunderlistTask -id 164936522
 ```
 
 Get all Wunderlist Tasks from a specific Wunderlist List (id).
-
 ### Example 3
 ```
 PS C:\>  Get-WunderlistTask -Title "*email
 ```
 
 Get-WunderlistTask where Title property contains "email".
-
 ### Example 4
 ```
 PS C:\>  Get-WunderlistTask -Title "*email*" -completed
 ```
 
 Get-WunderlistTask where Title property contains "email" and is completed.
-
-
 ## PARAMETERS
 
 ### -Completed
@@ -106,3 +101,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
