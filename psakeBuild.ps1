@@ -1,61 +1,64 @@
-<<<<<<< Updated upstream
-﻿# PSake makes variables declared here available in other scriptblocks
+#requires -Version 3
+
+# PSake makes variables declared here available in other scriptblocks
 # Init some things
 Properties {
-    # Find the build folder based on build system
-        $ProjectRoot = $ENV:BHProjectPath
-        if(-not $ProjectRoot)
-        {
-            $ProjectRoot = $PSScriptRoot
-        }
+  # Find the build folder based on build system
+  $ProjectRoot = $ENV:BHProjectPath
+  if(-not $ProjectRoot)
+  {
+    $ProjectRoot = $PSScriptRoot
+  }
 
-    $Timestamp = Get-date -uformat "%Y%m%d-%H%M%S"
-    $PSVersion = $PSVersionTable.PSVersion.Major
-    $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
-    $lines = '----------------------------------------------------------------------'
+  $Timestamp = Get-Date -UFormat '%Y%m%d-%H%M%S'
+  $PSVersion = $PSVersionTable.PSVersion.Major
+  $TestFile = "TestResults_PS$PSVersion`_$Timestamp.xml"
+  $lines = '----------------------------------------------------------------------'
 
-    $Verbose = @{}
-    if($ENV:BHCommitMessage -match "!verbose")
-    {
-        $Verbose = @{Verbose = $True}
+  $Verbose = @{}
+  if($ENV:BHCommitMessage -match '!verbose')
+  {
+    $Verbose = @{
+      Verbose = $True
     }
-=======
-﻿#psake is a build automation tool written in PowerShell
+  }
 
-properties {
+  #psake is a build automation tool written in PowerShell
+
+  Properties {
     $script = "$PSScriptRoot\Wunderlist.psm1"
     $pesterscriptroot  = "$PSScriptRoot\.\Tests"
->>>>>>> Stashed changes
-}
+  }
 
-Task Default -Depends Deploy
+  Task Default -Depends Deploy
 
-Task Init {
+  Task Init {
     $lines
     Set-Location $($ProjectRoot)   
-    "Build System Details:"
-    New-Item ENV:BHModuleFullName -value (get-item $env:BHProjectPath\*.psm1).FullName -Force | out-null #Needed for ScriptAnalyzer
+    'Build System Details:'
+    $null = New-Item ENV:BHModuleFullName -Value (Get-Item $ENV:BHProjectPath\*.psm1).FullName -Force #Needed for ScriptAnalyzer
     Get-Item ENV:BH*
     
     "`n"
-}
+  }
 
-task Analyze {
+  Task Analyze {
     $lines
     "`n`tSTATUS: Testing with ScriptAnalyzer PowerShell $PSVersion"
 
-    $saResults = Invoke-ScriptAnalyzer -Path $($ENV:BHModuleFullName) -Severity @('Error', 'Warning') -ExcludeRule ('PSAvoidUsingConvertToSecureStringWithPlainText','PSUseSingularNouns','PSAvoidGlobalVars','PSUseApprovedVerbs', 'PSUseShouldProcessForStateChangingFunctions' ) -Recurse -Verbose:$false
-    if ($saResults) {
-        $saResults | Format-Table  
-        Write-Error -Message 'One or more Script Analyzer errors/warnings where found. Build cannot continue!'        
+    $saResults = Invoke-ScriptAnalyzer -Path $($ENV:BHModuleFullName) -Severity @('Error', 'Warning') -ExcludeRule ('PSAvoidUsingConvertToSecureStringWithPlainText', 'PSUseSingularNouns', 'PSAvoidGlobalVars', 'PSUseApprovedVerbs', 'PSUseShouldProcessForStateChangingFunctions' ) -Recurse -Verbose:$false
+    if ($saResults) 
+    {
+      $saResults | Format-Table  
+      Write-Error -Message 'One or more Script Analyzer errors/warnings where found. Build cannot continue!'        
     }
     else
     {
-        write-Host 'No errors found by Script Analyzer' -ForegroundColor Green
+      Write-Host 'No errors found by Script Analyzer' -ForegroundColor Green
     }
-}
+  }
 
-Task Test -Depends Init  {
+  Task Test -Depends Init  {
     $lines
     "`n`tSTATUS: Testing with Pester PowerShell $PSVersion"
 
@@ -66,47 +69,47 @@ Task Test -Depends Init  {
     # In Appveyor?  Upload our tests! #Abstract this into a function?
     If($ENV:BHBuildSystem -eq 'AppVeyor')
     {
-        (New-Object 'System.Net.WebClient').UploadFile(
-            "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
-            "$ProjectRoot\$TestFile" )
+      (New-Object 'System.Net.WebClient').UploadFile(
+        "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
+      "$ProjectRoot\$TestFile" )
     }
-<<<<<<< Updated upstream
-=======
+
+
     else
     {
-        write-Host 'No Test errors found by Pester' -ForegroundColor Green
+      Write-Host 'No Test errors found by Pester' -ForegroundColor Green
     }
-}
->>>>>>> Stashed changes
+  }
 
-    Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
 
-    # Failed tests?
-    # Need to tell psake or it will proceed to the deployment. Danger!
-    if($TestResults.FailedCount -gt 0)
-    {
-        Write-Error "Failed '$($TestResults.FailedCount)' tests, build failed"
-    }
-    "`n"
+  Remove-Item -Path "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
+
+  # Failed tests?
+  # Need to tell psake or it will proceed to the deployment. Danger!
+  if($TestResults.FailedCount -gt 0)
+  {
+    Write-Error -Message "Failed '$($TestResults.FailedCount)' tests, build failed"
+  }
+  "`n"
 }
 
 Task Build -Depends Test {
-    $lines
+  $lines
     
-    # Load the module, read the exported functions, update the psd1 FunctionsToExport
-    Set-ModuleFunctions
+  # Load the module, read the exported functions, update the psd1 FunctionsToExport
+  Set-ModuleFunctions
 
-    # Bump the module version
-    Update-Metadata -Path $env:BHPSModuleManifest
+  # Bump the module version
+  Update-Metadata -Path $env:BHPSModuleManifest
 }
 
 Task Deploy -Depends Build {
-    $lines
+  $lines
 
-    $Params = @{
-        Path = $ProjectRoot
-        Force = $true
-        Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
-    }
-    Invoke-PSDeploy @Verbose @Params
+  $Params = @{
+    Path    = $ProjectRoot
+    Force   = $True
+    Recurse = $false
+  }
+  Invoke-PSDeploy @Verbose @Params
 }
