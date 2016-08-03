@@ -95,7 +95,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('Wunderlist','API','REST')
+        Tags = @('Wunderlist','API','REST','Microsoft')
 
         # A URL to the license for this module.
         LicenseUri = 'http://opensource.org/licenses/MIT'
