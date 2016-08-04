@@ -1,5 +1,5 @@
 ﻿TOPIC
-    Wunderlist 1.0.5
+    about_Wunderlist
 
 SHORT DESCRIPTION
     PowerShell Module for Wunderlist.
@@ -7,6 +7,24 @@ SHORT DESCRIPTION
 LONG DESCRIPTION
     With this module you can communicate with the Wunderlist API from within PowerShell.
 
-YOUR HEADER HERE
-    About topics in PowerShell are free-form text.  Add headers to your
-    about topic as necessary.
+    You can find API documentation here:
+        https://developer.wunderlist.com
+
+
+DETAILED DESCRIPTION
+    
+    Before able to use the PowerShell Wunderlist Module you need to register your Wunderlist App.
+
+    Follow the following steps to get started:
+    1. Go to https://developer.wunderlist.com/
+    2. Login with your Wunderlist account.
+    3. Register your app.
+    4. Enter a name for your awesome app.
+    5. Enter a description for your application.
+    6. Enter the URL for your application.
+    7. Enter URL to receive the authorization code.
+    8. On first usage you need to securely store your Wunderlist ClientId and AccessToken.
+        - Retrieve your AccessToken on the https://developer.wunderlist.com/apps by clicking on the Create AccessToken button.
+        - Run Set-WunderlistAuthentication -ClientID [yourclientid] -AccessToken [youraccesstoken] cmdlet
+          You should be asked to enter a password to securely store you ClientID and AccessToken on your system.
+    10. Now you are ready to start using the Wunderlist module.
