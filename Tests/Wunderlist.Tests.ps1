@@ -1,4 +1,4 @@
-﻿#requires -Version 3 -Modules Pester, Wunderlist
+﻿#requires -Version 3
 #Variables for Pester tests
 
 $ModulePath = Split-Path -Parent -Path (Split-Path -Parent -Path $MyInvocation.MyCommand.Path)
