@@ -26,7 +26,7 @@ Properties {
   #psake is a build automation tool written in PowerShell
 
   Properties {
-    $script = "$PSScriptRoot\Wunderlist.psm1"
+    $script = "$PSScriptRoot\Wunderlist\Wunderlist.psm1"
     $pesterscriptroot  = "$PSScriptRoot\.\Tests"
   }
 
@@ -36,7 +36,7 @@ Properties {
     $lines
     Set-Location $($ProjectRoot)   
     'Build System Details:'
-    $null = New-Item ENV:BHModuleFullName -Value (Get-Item $ENV:BHProjectPath\*.psm1).FullName -Force #Needed for ScriptAnalyzer
+    $null = New-Item ENV:BHModuleFullName -Value (Get-Item $ENV:BHProjectPath\Wunderlist\*.psm1).FullName -Force #Needed for ScriptAnalyzer
     Get-Item ENV:BH*
     
     "`n"
