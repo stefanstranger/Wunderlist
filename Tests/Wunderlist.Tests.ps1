@@ -57,12 +57,6 @@ Describe -Name 'Manifest' -Fixture {
       $Tag -notmatch '\s' | Should Be $true
     }
   }
-
-  It -name 'Module version should be higher then last published version' -test {
-    $LatestModuleVersion = Get-Content $ModuleVersionPath
-    $Global:NewModuleVersion = $ManifestHash.ModuleVersion
-    $ManifestHash.ModuleVersion | Should BeGreaterThan $LatestModuleVersion
-  }
 }
 
 
