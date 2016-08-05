@@ -4,13 +4,12 @@
 $ModulePath = Split-Path -Parent -Path (Split-Path -Parent -Path $MyInvocation.MyCommand.Path)
 $ModuleName = 'Wunderlist'
 $ManifestPath   = "$ModulePath\Wunderlist\$ModuleName.psd1"
+$ModulePSM1file   = "$ModulePath\Wunderlist\$ModuleName.psm1"
 if (Get-Module -Name $ModuleName) 
 {
   Remove-Module $ModuleName -Force 
 }
 Import-Module $ManifestPath -Verbose:$false
-
-$Global:ModuleVersionPath = "$($PSScriptRoot)\version.txt"
 
 
 # test the module manifest - exports the right functions, processes the right formats, and is generally correct
@@ -90,29 +89,11 @@ Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
       Get-WunderlistReminder | Should Not Be $null
     }
         
-    <#Fails because Task is not available yet.
-        It 'Passes Remove-WunderlistTask Function' {
-        $result = Get-WunderlistTask -Title 'Wunderlist Pester Test' | Remove-WunderlistTask
-        $result.title | Should Be 'Wunderlist Pester Test'
-
-        }
-    #>
-  }
-
-  Context -Name 'Testing Private Functions' -Fixture {
-    It -name 'Passes Build-AccessHeader Function ' -test {
-      Build-AccessHeader | Should Not Be $null
+    It 'Passes Remove-WunderlistTask Function' {
+        {
+            $null = Get-WunderlistTask -Title 'Wunderlist Pester Test' | Remove-WunderlistTask 
+        } | Should Not Throw
     }
 
-
-    <#
-        It 'Passes Set-WunderlistAuthentication Function ' {
-            
-        Mock Set-Content {}
-
-        Set-WunderlistAuthentication | Should Not Be $null
-
-        }
-    #>
   }
 }
