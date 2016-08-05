@@ -69,7 +69,7 @@ Description = 'PowerShell Module for Wunderlist'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Build-AccessHeader','Build-TaskUrl','Get-WunderlistData','Get-WunderlistList','Get-WunderlistReminder','Get-WunderlistTask','Get-WunderlistUser','New-WunderlistTask','Read-WunderlistAuthentication','Remove-WunderlistTask','Set-WunderlistAuthentication')
+FunctionsToExport = @('Get-WunderlistList','Get-WunderlistReminder','Get-WunderlistTask','Get-WunderlistUser','New-WunderlistTask','Remove-WunderlistTask','Set-WunderlistAuthentication')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
