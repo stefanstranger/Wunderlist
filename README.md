@@ -3,11 +3,17 @@ PowerShell Module for Wunderlist
 
 07/13/2016: - Initial version
 
-# Install
+
+[![Build status](https://ci.appveyor.com/api/projects/status/2vyr6rcrbfoju73j?svg=true)](https://ci.appveyor.com/project/stefanstranger/wunderlist)
+
+# Install from Github
 1. Download the zip file.
 2. Unblock the zip file.
 3. Extract contents to PowerShell Module folder of your choice.
 4. Run import-module Wunderlist cmdlet in PowerShell after following below steps.
+
+# Install from PowerShell Gallery
+1. Install-Module -Name Wunderlist -scope currentuser
 
 # Wunderlist Register your app
 1. Go to https://developer.wunderlist.com/
