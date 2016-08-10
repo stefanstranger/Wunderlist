@@ -96,6 +96,7 @@ function Get-WunderlistData {
 Function Get-WunderlistUser {
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('gwu')]
     param()
 
     process {
@@ -106,6 +107,7 @@ Function Get-WunderlistUser {
 Function Get-WunderlistList {
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('gwl')]
     param()
 
     process {
@@ -126,6 +128,7 @@ Function Get-WunderlistReminder {
 Function Get-WunderlistTask {
     [CmdletBinding()]
     [OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('gwt')]
     param (
         [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][string] [Alias('ListId')] $Id,
         [Parameter(Mandatory = $false)] [switch] $Completed,
@@ -183,6 +186,7 @@ Function Get-WunderlistTask {
 
 Function New-WunderlistTask {
     [CmdletBinding()]
+    [Alias('nwt')]
     param
     (
         [Parameter(Mandatory = $true)]   [int]$listid,        
@@ -227,6 +231,7 @@ Function New-WunderlistTask {
 Function Remove-WunderlistTask {
     [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='Medium')]
     [OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('rwt')]
     param
     (
         [Parameter(Mandatory  =$true,ValueFromPipelineByPropertyName=$true)]   [string] [Alias("TaskId")] $Id

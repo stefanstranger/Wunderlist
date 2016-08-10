@@ -65,6 +65,32 @@ Describe -Name 'Module Wunderlist works' -Fixture {
   }
 }
 
+Describe -Name 'Wunderlist Aliases work' -Fixture {
+  It -Name 'Testing gwu alias' -Test {
+    $result = (Get-Alias -name gwu).Definition 
+    $result | Should Be "Get-WunderlistUser"
+  }
+
+  It -Name 'Testing gwl alias' -Test {
+    $result = (Get-Alias -name gwl).Definition 
+    $result | Should Be "Get-WunderlistList"
+  }
+
+  It -Name 'Testing gwt alias' -Test {
+    $result = (Get-Alias -name gwt).Definition 
+    $result | Should Be "Get-WunderlistTask"
+  }
+
+  It -Name 'Testing nwt alias' -Test {
+    $result = (Get-Alias -name nwt).Definition 
+    $result | Should Be "New-WunderlistTask"
+  }
+
+  It -Name 'Testing rwt alias' -Test {
+    $result = (Get-Alias -name rwt).Definition 
+    $result | Should Be "Remove-WunderlistTask"
+  }
+}
 
 Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
   Context -Name 'Testing Public Functions' -Fixture {
