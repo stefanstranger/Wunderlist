@@ -256,7 +256,7 @@ Function Remove-WunderlistTask {
     }
 }
 
-#Helper Functions
+#region Helper Functions
 
 function Read-WunderlistAuthentication {
     [CmdletBinding()]
@@ -360,3 +360,13 @@ function Build-TaskUrl {
     write-verbose $buildurl
     'https://a.wunderlist.com/api/v1/tasks?list_id={0}&completed={1}' -f $Id, $Completed.ToString().ToLower()
 }
+
+$ExecutionContext.SessionState.Module.OnRemove ={
+
+    Remove-Variable AccessToken -Scope Global -Force
+    Remove-Variable ClientID -Scope Global -Force
+
+}
+#endregion Handle Module Removal
+
+#endregion
