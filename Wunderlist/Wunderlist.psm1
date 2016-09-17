@@ -256,6 +256,28 @@ Function Remove-WunderlistTask {
     }
 }
 
+Function Get-WunderlistNote {
+  [CmdletBinding()]
+  [OutputType('System.Management.Automation.PSCustomObject')]
+  [Alias('gwn')]
+  param (
+    [Parameter(Mandatory = $true,ValueFromPipelineByPropertyName = $true)][int] $Id,
+    [Parameter(ParameterSetName = 'List')][Switch]$List,
+    [Parameter(ParameterSetName = 'Task')][Switch]$Task
+  )
+ 
+  process {
+    if ($List) 
+    {
+      Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/notes?list_id=$Id"
+    }
+    elseif (($Task)) 
+    {
+      Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/notes?task_id=$Id"
+    }
+  }
+}
+
 #region Helper Functions
 
 function Read-WunderlistAuthentication {
@@ -361,10 +383,11 @@ function Build-TaskUrl {
     'https://a.wunderlist.com/api/v1/tasks?list_id={0}&completed={1}' -f $Id, $Completed.ToString().ToLower()
 }
 
+#region Handle Module Removal from idea Boe Prox's PoshRSJob module
 $ExecutionContext.SessionState.Module.OnRemove ={
 
-    Remove-Variable AccessToken -Scope Global -Force
-    Remove-Variable ClientID -Scope Global -Force
+    Remove-Variable AccessToken -Scope Global -Force -ErrorAction SilentlyContinue
+    Remove-Variable ClientID -Scope Global -Force -ErrorAction SilentlyContinue
 
 }
 #endregion Handle Module Removal

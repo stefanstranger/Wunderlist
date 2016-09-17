@@ -90,6 +90,11 @@ Describe -Name 'Wunderlist Aliases work' -Fixture {
     $result = (Get-Alias -name rwt).Definition 
     $result | Should Be "Remove-WunderlistTask"
   }
+
+  It -Name 'Testing gwn alias' -Test {
+    $result = (Get-Alias -name gwn).Definition 
+    $result | Should Be "Get-WunderlistNote"
+  }
 }
 
 Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
@@ -119,6 +124,10 @@ Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
         {
             $null = Get-WunderlistTask -Title 'Wunderlist Pester Test' | Remove-WunderlistTask 
         } | Should Not Throw
+    }
+
+    It 'Passes Get-WunderlistNote Function' -test {
+      Get-WunderlistTask | Get-WunderlistNote -Task | Should Not Be $null
     }
 
   }

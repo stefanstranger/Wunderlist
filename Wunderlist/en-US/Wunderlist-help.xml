@@ -226,6 +226,132 @@
 </command:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-WunderlistNote</command:name>
+<command:verb>Get</command:verb>
+<command:noun>WunderlistNote</command:noun>
+<maml:description><maml:para>This Function retrieves the Notes for a Task or List.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This Function retrieves the Notes for a Task or List.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-WunderlistNote</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none"><maml:name>Id</maml:name>
+<maml:Description><maml:para>Task Id (integer)
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>List</maml:name>
+<maml:Description><maml:para>Select this switch parameter for Notes per List
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+<command:syntaxItem><maml:name>Get-WunderlistNote</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none"><maml:name>Id</maml:name>
+<maml:Description><maml:para>Task Id (integer)
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Task</maml:name>
+<maml:Description><maml:para>Select this switch parameter for Notes per Task
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none"><maml:name>Id</maml:name>
+<maml:Description><maml:para>Task Id (integer)
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>List</maml:name>
+<maml:Description><maml:para>Select this switch parameter for Notes per List
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Task</maml:name>
+<maml:Description><maml:para>Select this switch parameter for Notes per Task
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>System.String</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSCustomObject</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistNote -Task -Id 2091297441</dev:code>
+<dev:remarks><maml:para>Get's the Note from the Task with Id 2091297441
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistNote -List -Id 126300146</dev:code>
+<dev:remarks><maml:para>Get's the Note from the List with Id 2091297441
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 3</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistTask | Get-WunderlistNote -Task</dev:code>
+<dev:remarks><maml:para>Get Wunderlist Note(s) for all Tasks
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 4</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistList | Get-WunderlistNote -List</dev:code>
+<dev:remarks><maml:para>Get-Wunderlist Note for a all Lists
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
+<maml:uri>https://developer.wunderlist.com/documentation/endpoints/note</maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <command:details><command:name>Get-WunderlistData</command:name>
 <command:verb>Get</command:verb>
 <command:noun>WunderlistData</command:noun>
@@ -285,122 +411,6 @@
 </command:examples>
 <command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
 <maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
-</command:command>
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-WunderlistTask</command:name>
-<command:verb>Get</command:verb>
-<command:noun>WunderlistTask</command:noun>
-<maml:description><maml:para>This Function retrieves Wunderlist Tasks.
-</maml:para>
-</maml:description>
-</command:details>
-<maml:description><maml:para>This Function retrieves Wunderlist Tasks within the available Wunderlist Lists.
-</maml:para>
-</maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-WunderlistTask</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
-<maml:Description><maml:para>Wunderlist List Id
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Wunderlist Task Title
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
-<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
-</maml:para>
-</maml:Description>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-</command:syntaxItem>
-</command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
-<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-<dev:type><maml:name>SwitchParameter</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
-<maml:Description><maml:para>Wunderlist List Id
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
-<maml:Description><maml:para>Wunderlist Task Title
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-</command:parameters>
-<command:inputTypes><command:inputType><dev:type><maml:name>System.String</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:inputType>
-</command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSCustomObject</maml:name>
-</dev:type>
-<maml:description><maml:para>
-</maml:para>
-</maml:description>
-</command:returnValue>
-</command:returnValues>
-<maml:alertSet><maml:alert><maml:para>
-</maml:para>
-</maml:alert>
-</maml:alertSet>
-<command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; Get-WunderlistTask</dev:code>
-<dev:remarks><maml:para>Get all Wunderlist Tasks for all Lists.
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 2</maml:title>
-<dev:code>PS C:\&gt; Get-WunderlistTask -id 164936522</dev:code>
-<dev:remarks><maml:para>Get all Wunderlist Tasks from a specific Wunderlist List (id).
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 3</maml:title>
-<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email</dev:code>
-<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email".
-</maml:para>
-</dev:remarks>
-</command:example>
-<command:example><maml:title>Example 4</maml:title>
-<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email*" -completed</dev:code>
-<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email" and is completed.
-</maml:para>
-</dev:remarks>
-</command:example>
-</command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/task</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
