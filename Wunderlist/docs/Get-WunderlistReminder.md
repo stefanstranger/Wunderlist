@@ -1,54 +1,43 @@
 ---
 external help file: Wunderlist-help.xml
+online version: 
 schema: 2.0.0
-online version: https://developer.wunderlist.com/documentation/endpoints/reminderlist
 ---
 
-# Get-WunderlistData
+# Get-WunderlistReminder
+
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Get Reminders for a Task or List
+
 ## SYNTAX
 
 ```
-Get-WunderlistData [[-RequestUrl] <Object>] [<CommonParameters>]
+Get-WunderlistReminder
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Get Reminders for a Task or List
+
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-WunderlistReminder
 ```
 
-{{ Add example description here }}
+Get Reminders for a Task or List
+
 ## PARAMETERS
 
-### -RequestUrl
-{{Fill RequestUrl Description}}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 0
-Default value: 
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
 
 ### None
 
+
 ## OUTPUTS
 
-### System.Object
+### System.Management.Automation.PSCustomObject
+
 
 ## NOTES
 

@@ -5,13 +5,14 @@ schema: 2.0.0
 ---
 
 # Remove-WunderlistTask
+
 ## SYNOPSIS
 This Function removes a Wunderlist Task for a specified List.
 
 ## SYNTAX
 
 ```
-Remove-WunderlistTask [-Id] <String> [-WhatIf] [-Confirm]
+Remove-WunderlistTask [-Id] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,7 +53,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -67,7 +68,7 @@ Aliases: TaskId
 
 Required: True
 Position: 0
-Default value: 
+Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -82,20 +83,21 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
 
-
 ## OUTPUTS
 
 ### System.Management.Automation.PSCustomObject
-
 
 ## NOTES
 

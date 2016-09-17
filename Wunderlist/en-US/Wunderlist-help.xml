@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <helpItems schema="maml">
 
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -62,7 +62,7 @@
 <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
 <dev:type><maml:name>Object</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
 <maml:Description><maml:para>{{Fill Completed Description}}
@@ -90,7 +90,7 @@
 <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
 <dev:type><maml:name>Object</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
@@ -139,7 +139,7 @@
 <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
 <dev:type><maml:name>Object</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:syntaxItem>
 </command:syntax>
@@ -150,7 +150,7 @@
 <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
 <dev:type><maml:name>Object</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
@@ -192,9 +192,27 @@
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Get-WunderlistList</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ListId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>List Id
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
 </command:syntaxItem>
 </command:syntax>
-<command:parameters></command:parameters>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="ListId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>List Id
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
 </dev:type>
 <maml:description><maml:para>
@@ -216,6 +234,12 @@
 <command:examples><command:example><maml:title>Example 1</maml:title>
 <dev:code>PS C:\&gt; Get-WunderlistList</dev:code>
 <dev:remarks><maml:para>Retrieves all Wunderlist Lists where user has permission to.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistList -id 265967075</dev:code>
+<dev:remarks><maml:para>Retrieves Wunderlist List with id 265967075
 </maml:para>
 </dev:remarks>
 </command:example>
@@ -241,10 +265,10 @@
 <maml:Description><maml:para>Task Id (integer)
 </maml:para>
 </maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>List</maml:name>
 <maml:Description><maml:para>Select this switch parameter for Notes per List
@@ -260,10 +284,10 @@
 <maml:Description><maml:para>Task Id (integer)
 </maml:para>
 </maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Task</maml:name>
 <maml:Description><maml:para>Select this switch parameter for Notes per Task
@@ -279,10 +303,10 @@
 <maml:Description><maml:para>Task Id (integer)
 </maml:para>
 </maml:Description>
-<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-<dev:type><maml:name>String</maml:name>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>List</maml:name>
 <maml:Description><maml:para>Select this switch parameter for Notes per List
@@ -352,38 +376,20 @@
 </command:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
-<command:details><command:name>Get-WunderlistData</command:name>
+<command:details><command:name>Get-WunderlistReminder</command:name>
 <command:verb>Get</command:verb>
-<command:noun>WunderlistData</command:noun>
-<maml:description><maml:para>{{Fill in the Synopsis}}
+<command:noun>WunderlistReminder</command:noun>
+<maml:description><maml:para>Get Reminders for a Task or List
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>{{Fill in the Description}}
+<maml:description><maml:para>Get Reminders for a Task or List
 </maml:para>
 </maml:description>
-<command:syntax><command:syntaxItem><maml:name>Get-WunderlistData</maml:name>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>RequestUrl</maml:name>
-<maml:Description><maml:para>{{Fill RequestUrl Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
+<command:syntax><command:syntaxItem><maml:name>Get-WunderlistReminder</maml:name>
 </command:syntaxItem>
 </command:syntax>
-<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>RequestUrl</maml:name>
-<maml:Description><maml:para>{{Fill RequestUrl Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-<dev:type><maml:name>Object</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
-</command:parameter>
-</command:parameters>
+<command:parameters></command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
 </dev:type>
 <maml:description><maml:para>
@@ -391,7 +397,7 @@
 </maml:description>
 </command:inputType>
 </command:inputTypes>
-<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSCustomObject</maml:name>
 </dev:type>
 <maml:description><maml:para>
 </maml:para>
@@ -403,16 +409,126 @@
 </maml:alert>
 </maml:alertSet>
 <command:examples><command:example><maml:title>Example 1</maml:title>
-<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
-<dev:remarks><maml:para>{{ Add example description here }}
+<dev:code>PS C:\&gt; Get-WunderlistReminder</dev:code>
+<dev:remarks><maml:para>Get Reminders for a Task or List
 </maml:para>
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
-<maml:uri>https://developer.wunderlist.com/documentation/endpoints/reminderlist</maml:uri>
-</maml:navigationLink>
-</command:relatedLinks>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-WunderlistTask</command:name>
+<command:verb>Get</command:verb>
+<command:noun>WunderlistTask</command:noun>
+<maml:description><maml:para>Get Tasks for a List
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Get Tasks for a List
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-WunderlistTask</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>Wunderlist List Id
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
+<maml:Description><maml:para>Wunderlist Task Title
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
+<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Completed</maml:name>
+<maml:Description><maml:para>Get all Wunderlist Tasks for all Lists which are completed.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="ListId"><maml:name>Id</maml:name>
+<maml:Description><maml:para>Wunderlist List Id
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Title</maml:name>
+<maml:Description><maml:para>Wunderlist Task Title
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>System.Int32</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Management.Automation.PSCustomObject</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistTask</dev:code>
+<dev:remarks><maml:para>Get all Wunderlist Tasks for all Lists.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 2</maml:title>
+<dev:code>PS C:\&gt; Get-WunderlistTask -id 164936522</dev:code>
+<dev:remarks><maml:para>Get all Wunderlist Tasks from a specific Wunderlist List (id).
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 3</maml:title>
+<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email</dev:code>
+<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email".
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>Example 4</maml:title>
+<dev:code>PS C:\&gt;  Get-WunderlistTask -Title "*email*" -completed</dev:code>
+<dev:remarks><maml:para>Get-WunderlistTask where Title property contains "email" and is completed.
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
 </command:command>
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <command:details><command:name>Get-WunderlistUser</command:name>
@@ -478,7 +594,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>completed</maml:name>
 <maml:Description><maml:para>Completed status of Wunderlist Task
@@ -487,7 +603,7 @@
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
 <dev:type><maml:name>Boolean</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>due_date</maml:name>
 <maml:Description><maml:para>Date when Wunderlist Task is due
@@ -496,7 +612,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>listid</maml:name>
 <maml:Description><maml:para>Id for the Wunderlist List where to create the Wunderlist Task
@@ -505,7 +621,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_count</maml:name>
 <maml:Description><maml:para>Integer on how often the recurrence type is recurrent
@@ -514,7 +630,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_type</maml:name>
 <maml:Description><maml:para>Valid options: "day", "week", "month", "year", must be accompanied by recurrence_count
@@ -528,7 +644,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>starred</maml:name>
 <maml:Description><maml:para>Star for created Wunderlist Task
@@ -537,7 +653,7 @@
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
 <dev:type><maml:name>Boolean</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>title</maml:name>
 <maml:Description><maml:para>Title of Wunderlist Task
@@ -546,7 +662,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:syntaxItem>
 </command:syntax>
@@ -557,7 +673,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>completed</maml:name>
 <maml:Description><maml:para>Completed status of Wunderlist Task
@@ -566,7 +682,7 @@
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
 <dev:type><maml:name>Boolean</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>due_date</maml:name>
 <maml:Description><maml:para>Date when Wunderlist Task is due
@@ -575,7 +691,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>listid</maml:name>
 <maml:Description><maml:para>Id for the Wunderlist List where to create the Wunderlist Task
@@ -584,7 +700,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_count</maml:name>
 <maml:Description><maml:para>Integer on how often the recurrence type is recurrent
@@ -593,7 +709,7 @@
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>recurrence_type</maml:name>
 <maml:Description><maml:para>Valid options: "day", "week", "month", "year", must be accompanied by recurrence_count
@@ -602,7 +718,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>starred</maml:name>
 <maml:Description><maml:para>Star for created Wunderlist Task
@@ -611,7 +727,7 @@
 <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
 <dev:type><maml:name>Boolean</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>title</maml:name>
 <maml:Description><maml:para>Title of Wunderlist Task
@@ -620,7 +736,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
@@ -689,7 +805,7 @@
 <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
 <dev:type><maml:name>SecureString</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:syntaxItem>
 </command:syntax>
@@ -700,7 +816,7 @@
 <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
 <dev:type><maml:name>SecureString</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>System.Security.SecureString</maml:name>
@@ -752,7 +868,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf"><maml:name>Confirm</maml:name>
 <maml:Description><maml:para>{{Fill Confirm Description}}
@@ -788,7 +904,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi"><maml:name>WhatIf</maml:name>
 <maml:Description><maml:para>{{Fill WhatIf Description}}
@@ -858,7 +974,7 @@
 <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
 <dev:type><maml:name>SecureString</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>AccessToken</maml:name>
 <maml:Description><maml:para>{{Fill AccessToken Description}}
@@ -867,7 +983,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>ClientID</maml:name>
 <maml:Description><maml:para>{{Fill ClientID Description}}
@@ -876,7 +992,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:syntaxItem>
 </command:syntax>
@@ -887,7 +1003,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>ClientID</maml:name>
 <maml:Description><maml:para>{{Fill ClientID Description}}
@@ -896,7 +1012,7 @@
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>MasterPassword</maml:name>
 <maml:Description><maml:para>{{Fill MasterPassword Description}}
@@ -905,7 +1021,7 @@
 <command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
 <dev:type><maml:name>SecureString</maml:name>
 <maml:uri /></dev:type>
-<dev:defaultValue></dev:defaultValue>
+<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>System.Security.SecureString</maml:name>

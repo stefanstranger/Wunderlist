@@ -1,12 +1,14 @@
 ---
 external help file: Wunderlist-help.xml
-schema: 2.0.0
 online version: https://developer.wunderlist.com/documentation/endpoints/task
+schema: 2.0.0
 ---
 
 # New-WunderlistTask
+
 ## SYNOPSIS
 This Function Creates  new Wunderlist Task for a specified List.
+
 ## SYNTAX
 
 ```
@@ -17,6 +19,7 @@ New-WunderlistTask -listid <Int32> -title <String> [-assignee_id <Int32>] [-comp
 
 ## DESCRIPTION
 This Function Creates  new Wunderlist Task for a specified List.
+
 ## EXAMPLES
 
 ### Example 1
@@ -44,6 +47,7 @@ PS C:\> $params = @{
 
 Created new Wunderlist Task for listid '122588396' with the following title 'Testing posh module' assigned to user
 with id '10404478' where task is completed and is repeated every two days and is due on date '2016-07-30'
+
 ## PARAMETERS
 
 ### -assignee_id
@@ -56,7 +60,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -71,7 +75,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -86,7 +90,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -101,7 +105,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -116,7 +120,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -132,7 +136,7 @@ Accepted values: day, week, month, year
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -147,7 +151,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -162,13 +166,14 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
