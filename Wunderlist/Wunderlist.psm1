@@ -108,10 +108,20 @@ Function Get-WunderlistList {
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('gwl')]
-    param()
+    param (
+        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][int] [Alias('ListId')] $Id
+    )
 
     process {
-        Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/lists'
+    if (!($Id)) 
+        {
+            Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/lists'
+        }
+    elseif ($Id)
+        {
+            $HttpRequestUrl = 'https://a.wunderlist.com/api/v1/lists/{0}' -f $Id
+            Get-WunderlistData -RequestUrl $HttpRequestUrl
+        }
     }
 }
 
@@ -130,7 +140,7 @@ Function Get-WunderlistTask {
     [OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('gwt')]
     param (
-        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][string] [Alias('ListId')] $Id,
+        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][int] [Alias('ListId')] $Id,
         [Parameter(Mandatory = $false)] [switch] $Completed,
         [Parameter(Mandatory = $false)] [string] $Title="*"
     )
@@ -261,7 +271,7 @@ Function Get-WunderlistNote {
   [OutputType('System.Management.Automation.PSCustomObject')]
   [Alias('gwn')]
   param (
-    [Parameter(Mandatory = $true,ValueFromPipelineByPropertyName = $true)][int] $Id,
+    [Parameter(Mandatory = $true,ValueFromPipelineByPropertyName = $true)][double] $Id,
     [Parameter(ParameterSetName = 'List')][Switch]$List,
     [Parameter(ParameterSetName = 'Task')][Switch]$Task
   )
