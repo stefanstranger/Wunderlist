@@ -15,7 +15,8 @@
 
 #Store Wunderlist ClientID and AccessToken securely
 Function Set-WunderlistAuthentication {
-[CmdletBinding()]
+	
+	[CmdletBinding()]
     Param
     (
         # Wunderlist Client ID.
@@ -84,7 +85,9 @@ Function Set-WunderlistAuthentication {
 }
 
 function Get-WunderlistData {
-    param (
+    
+	Param 
+	(
         $RequestUrl
     )
 
@@ -94,30 +97,67 @@ function Get-WunderlistData {
 }
 
 Function Get-WunderlistUser {
+	
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('gwu')]
-    param()
-
-    process {
+    Param
+	(
+	)
+	
+    Process {
         Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/user'
     }
 }
+
+Function Get-WunderlistFolder {
+
+    [CmdletBinding()]
+    [OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('gwf')]
+    Param 
+	(
+        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][string] $Id
+    )
+ 
+    Process {
+		#Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders?id=$Id"
+		if (($id)) 
+		{
+			Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders?id=$Id"
+		}
+		else 
+		{
+			$folders = Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders"
+			#Retrieve list from folder list_id property
+			$i = 0
+			foreach ($folder in $folders)
+			{
+				foreach ($list in ($folder.list_ids)) {
+					gwl -id $list| gwt | select *, @{L='FolderPath';E={$folder.title + '\' + (gwl -id $list).title}}
+				}
+			}
+
+		}
+    }
+}
+
 
 Function Get-WunderlistList {
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('gwl')]
-    param (
-        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][int] [Alias('ListId')] $Id
+	Param 
+	(
+        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)]	[int] [Alias('ListId')] $Id
     )
 
-    process {
-    if (!($Id)) 
-        {
-            Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/lists'
-        }
-    elseif ($Id)
+    Process {
+		if (!($Id)) 
+		{
+			Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/lists'
+		}
+		elseif ($Id)
         {
             $HttpRequestUrl = 'https://a.wunderlist.com/api/v1/lists/{0}' -f $Id
             Get-WunderlistData -RequestUrl $HttpRequestUrl
@@ -128,9 +168,11 @@ Function Get-WunderlistList {
 Function Get-WunderlistReminder {
 	[CmdletBinding()]
 	[OutputType('System.Management.Automation.PSCustomObject')]
-	param (	)
+	Param 
+	(	
+	)
 
-    process {
+    Process {
         Get-WunderlistData -RequestUrl 'https://a.wunderlist.com/api/v1/reminders'
     }
 }
@@ -139,13 +181,14 @@ Function Get-WunderlistTask {
     [CmdletBinding()]
     [OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('gwt')]
-    param (
+    Param 
+	(
         [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][int] [Alias('ListId')] $Id,
         [Parameter(Mandatory = $false)] [switch] $Completed,
         [Parameter(Mandatory = $false)] [string] $Title="*"
     )
 
-    process {
+    Process {
         
         if (!($Id)) 
         {
@@ -175,7 +218,6 @@ Function Get-WunderlistTask {
                 }
             }
         }
-
         else 
         {
             if (!($Completed)) 
@@ -189,8 +231,6 @@ Function Get-WunderlistTask {
                 Get-WunderlistData -RequestUrl $requesturl | where-object {$_.title -like $title}
             }
         }
-
-
     }
 }
 
@@ -216,38 +256,37 @@ Function New-WunderlistTask {
     )
     
     
-        $HttpRequesturl =  'https://a.wunderlist.com/api/v1/tasks'
+	$HttpRequesturl =  'https://a.wunderlist.com/api/v1/tasks'
 
-        $hashtable = [ordered]@{'list_id'   = $listid;
-                       'title'              = $title;
-                       'assignee_id'        = $assignee_id;
-                       'completed'          = $completed;
-                       'recurrence_type'    = $recurrence_type;
-                       'recurrence_count'   = $recurrence_count;
-                       'due_date'           = $due_date;
-                       'starred'            = $starred;
-                      }
-        $body = ConvertTo-Json -InputObject $hashtable
-        Write-Debug $body
-        Write-Verbose 'Creating Request Header'
-        $headers = Build-AccessHeader
-        write-debug "$($headers.values)"
-        $result = Invoke-RestMethod -URI $HttpRequestUrl -Method POST -body $body -Headers $headers -ContentType 'application/json'
-        return $result
-    
-    
+	$hashtable = [ordered]@{'list_id'   = $listid;
+				   'title'              = $title;
+				   'assignee_id'        = $assignee_id;
+				   'completed'          = $completed;
+				   'recurrence_type'    = $recurrence_type;
+				   'recurrence_count'   = $recurrence_count;
+				   'due_date'           = $due_date;
+				   'starred'            = $starred;
+				  }
+	$body = ConvertTo-Json -InputObject $hashtable
+	Write-Debug $body
+	Write-Verbose 'Creating Request Header'
+	$headers = Build-AccessHeader
+	write-debug "$($headers.values)"
+	$result = Invoke-RestMethod -URI $HttpRequestUrl -Method POST -body $body -Headers $headers -ContentType 'application/json'
+
+	return $result
 }
 
 Function Remove-WunderlistTask {
     [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='Medium')]
     [OutputType('System.Management.Automation.PSCustomObject')]
     [Alias('rwt')]
-    param
+    Param
     (
         [Parameter(Mandatory  =$true,ValueFromPipelineByPropertyName=$true)]   [string] [Alias("TaskId")] $Id
     )
 
-    process {
+    Process {
 
         $Wunderlisttask = get-wunderlistList | get-wunderlisttask | Where-Object {$_.id -eq $id} 
 
@@ -270,13 +309,14 @@ Function Get-WunderlistNote {
   [CmdletBinding()]
   [OutputType('System.Management.Automation.PSCustomObject')]
   [Alias('gwn')]
-  param (
+  Param 
+  (
     [Parameter(Mandatory = $true,ValueFromPipelineByPropertyName = $true)][double] $Id,
     [Parameter(ParameterSetName = 'List')][Switch]$List,
     [Parameter(ParameterSetName = 'Task')][Switch]$Task
   )
  
-  process {
+  Process {
     if ($List) 
     {
       Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/notes?list_id=$Id"
@@ -358,15 +398,19 @@ function Read-WunderlistAuthentication {
 
 function Build-AccessHeader {
     [CmdletBinding()]
-    param()
-    Write-Verbose 'Build-AccessHeader being called'
+    Param
+	(
+	)
+    
+	Write-Verbose 'Build-AccessHeader being called'
     #Check if ClientID and\or AccessToken are not available in session
     
     Write-Verbose "Checking for ClientID $env:ClientID and AccessToken $env:AccessToken variables"
 
     #For AppVeyor Tests also check environment variables
     Write-Verbose "AppVeyor" 
-    if (($env:ClientID -and $env:AccessToken)) {
+    if (($env:ClientID -and $env:AccessToken)) 
+	{
         $Global:AccessToken = $env:AccessToken
         $Global:ClientID = $env:ClientID
     }
@@ -384,7 +428,8 @@ function Build-AccessHeader {
 }
 
 function Build-TaskUrl {
-    param (
+    Param 
+	(
         $Id, 
         [switch]$Completed
     )
