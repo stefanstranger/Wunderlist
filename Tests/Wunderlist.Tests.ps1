@@ -95,6 +95,11 @@ Describe -Name 'Wunderlist Aliases work' -Fixture {
     $result = (Get-Alias -name gwn).Definition 
     $result | Should Be "Get-WunderlistNote"
   }
+
+  It -Name 'Testing gwf alias' -Test {
+    $result = (Get-Alias -name gwf).Definition 
+    $result | Should Be "Get-WunderlistFolder"
+  }
 }
 
 Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
