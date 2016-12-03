@@ -1,13 +1,16 @@
-Import-Module 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist' -verbose
-New-MarkdownHelp -Module Wunderlist -OutputFolder 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist\docs'
+Import-Module "$env:home\Documents\GitHub\Wunderlist\Wunderlist" -verbose
+New-MarkdownHelp -Module Wunderlist -OutputFolder "$env:home\Documents\GitHub\Wunderlist\Wunderlist\docs"
 
 # re-import your module with latest changes
-Import-Module 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist' -verbose -Force
-Update-MarkdownHelp 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist\docs' -Verbose
+Import-Module "$env:home\Documents\GitHub\Wunderlist\Wunderlist" -verbose -Force
+Update-MarkdownHelp "$env:home\Documents\GitHub\Wunderlist\Wunderlist\docs" -Verbose
+
+#Update for single new Command
+New-MarkdownHelp -Command 'Get-WunderlistFolder' -OutputFolder "$env:home\Documents\GitHub\Wunderlist\Wunderlist\docs"
 
 
-New-ExternalHelp 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist\docs' -OutputPath 'C:\Users\Stefan\Documents\GitHub\Wunderlist\Wunderlist\en-US\' -Force
+New-ExternalHelp "$env:home\Documents\GitHub\Wunderlist\Wunderlist\docs" -OutputPath "$env:home\\Documents\GitHub\Wunderlist\Wunderlist\en-US" -Force
 
 #Test
 remove-module Wunderlist -force
-ipmo C:\users\Stefan\Documents\GitHub\Wunderlist\wunderlist -Verbose
+ipmo "$env:home\Documents\GitHub\Wunderlist\wunderlist" -Verbose
