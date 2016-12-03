@@ -4,3 +4,4 @@ version.txt
 Get-PSDriveRoot.ps1
 Test*.xml
 InstallWunderlistModuleFromPSGallery.ps1
+Get-WunderlistFolder.ps1
