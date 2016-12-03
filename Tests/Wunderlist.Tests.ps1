@@ -130,5 +130,9 @@ Describe -Name 'Test Functions in Wunderlist Module' -Fixture {
       Get-WunderlistTask | Get-WunderlistNote -Task | Should Not Be $null
     }
 
+    It 'Passes Get-WunderlistFolder Function' -test {
+      Get-WunderlistFolder | Should Not Be $null
+    }
+
   }
 }

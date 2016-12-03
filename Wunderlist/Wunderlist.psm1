@@ -288,6 +288,43 @@ Function Get-WunderlistNote {
   }
 }
 
+Function Get-WunderlistFolder {
+       [CmdletBinding()]
+    [OutputType('System.Management.Automation.PSCustomObject')]
+    [Alias('gwf')]
+    param (
+        [Parameter(Mandatory = $false,ValueFromPipelineByPropertyName = $true)][double] $Id
+    )
+
+    process {
+
+            #Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders?id=$Id"
+            if (($id)) 
+                 {
+                    Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders?id=$Id"
+                 }
+            
+            else 
+            {
+                $folders = Get-WunderlistData -RequestUrl "https://a.wunderlist.com/api/v1/folders"
+                #Verify list_id in Lists overview
+                $folderlistids = $folders.list_ids
+                $alllists = (get-wunderlistlist).id
+                $existinglist = Compare-Object $folderlistids $alllists -IncludeEqual -ExcludeDifferent | ForEach-Object { $_.InputObject }
+                #Retrieve list from folder list_id property
+                #$i = 0
+                foreach ($folder in $folders)
+                {
+                    foreach ($list in $existinglist) {
+                        #write-verbose $list
+                        gwl -id $list  | gwt | select *, @{L='FolderPath';E={$folder.title + '\' + (gwl -id $list).title}} 
+                    }
+                }
+
+            }
+    }
+}
+
 #region Helper Functions
 
 function Read-WunderlistAuthentication {
